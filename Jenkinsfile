@@ -33,8 +33,8 @@ pipeline {
         stage('push image') {
             steps {
                 echo 'pushing image....'
-                bat 'docker tag testsolutionpush:latest tomekadamczyk1q:fromjenkinspipeline'
-                bat 'docker push tomekadamczyk1q:fromjenkinspipeline'
+                bat 'docker tag testsolutionpush:latest tomekadamczyk1q/repo:fromjenkinspipeline'
+                bat 'docker push tomekadamczyk1q/repo:fromjenkinspipeline'
             }
         }
     }
