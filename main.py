@@ -1,2 +1,2 @@
 import calc
-print(f"3+1 = {calc.increment(3)}")
+print(f"77+1 = {calc.increment(77)}")
