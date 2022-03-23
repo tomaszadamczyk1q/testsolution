@@ -26,11 +26,15 @@ pipeline {
         stage('build image') {
             steps {
                 echo 'building image....'
+                bat 'docker build -t testsolutionpush .'
+                bat 'docker run testsolutionpush'
             }
         }
         stage('push image') {
             steps {
                 echo 'pushing image....'
+                bat 'docker tag testsolutionpush:latest tomekadamczyk1q:fromjenkinspipeline'
+                bat 'docker push tomekadamczyk1q:fromjenkinspipelin'
             }
         }
     }
