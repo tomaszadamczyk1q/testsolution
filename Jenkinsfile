@@ -1,20 +1,36 @@
 pipeline {
     agent any
+    environment {
+    Main_Env = "Welcome to main branch"
+    Python = "C:\\\\Users\\Student\\AppData\\Local\\Programs\\Python\\Python310\\python.exe"
+    }
 
     stages {
-        stage('Build') {
+        stage('Chceck branch') {
             steps {
                 echo 'Building..'
-            }
+                }
         }
-        stage('Test') {
+        stage('Test code') {
             steps {
                 echo 'Testing..'
+                ${Python} -m pytest
+                
             }
         }
-        stage('Deploy') {
+        stage('Run code') {
             steps {
-                echo 'Deploying....'
+                ${Python}  main.py
+            }
+        }
+        stage('build image') {
+            steps {
+                echo 'building image....'
+            }
+        }
+        stage('push image') {
+            steps {
+                echo 'pushing image....'
             }
         }
     }
