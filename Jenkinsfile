@@ -14,13 +14,13 @@ pipeline {
         stage('Test code') {
             steps {
                 echo 'Testing..'
-                ${Python} -m pytest
+                bat "${Python} -m pytest"
                 
             }
         }
         stage('Run code') {
             steps {
-                ${Python}  main.py
+                bat "${Python}  main.py"
             }
         }
         stage('build image') {
